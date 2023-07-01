@@ -1,33 +1,49 @@
-"""
-to-do list application where users can add, view, and mark tasks as completed.
-You can implement features like task prioritization, due dates, and
-the ability to save and load tasks from a file.
-"""
+#from ToDoListWithMenu import get_valid_integer
+#from ToDoListWithMenu import Task
+import ToDoListWithMenu
 
-#FIXME: ways to improve-> input validation for all entries, mouse interface for selecting remaining options
+print("This is processed in main")
+tasks = []
 
-#a class used to create a to do item
-class Task:
-    def __init__(self):
-        self.title = input("Enter the title of the task: ")
-        self.priority = input("Enter 'High' or 'Low' for the priority level: ")
-        self.due_date = input ("Enter the the date due as MM-DD-YY: ")
-        self.completed = False
+# Main program
+while True:
+    ToDoListWithMenu.show_menu()
+    menu_choice = input("Enter your choice (1-3): ")
+    #add a new task
+    if menu_choice == "1":
+        task = ToDoListWithMenu.Task()
+        tasks.append(task)
+        print("\nTask Entered Succesfully! \n")
+    #get a message
+    elif menu_choice == "2":
+        print("\nYou are beautiful \n")
+    #quit
+    elif menu_choice == "3":
+        print("Quitting...")
+        break
+    #if invalid input
+    else:
+        print("Invalid choice. Please enter a number from 1 to 3.")
 
-    def mark_as_completed(self):
-        self.completed = True
 
-    def __str__(self):
-        status = "Completed" if self.completed else "Pending"
-        return f"Title: {self.title}\nPriority: {self.priority}\nDue Date: {self.due_date}\nStatus: {status}"
 
-#Task blueprint to create instances of tasks within todo list
-task1 = Task()
 
-#print task, complete task, reprint task showing completed
+#show results before and after completion
+print("\nShow results: ")
+for task in tasks:
+      print(task)
+      print()
 print()
-print(task1)
-print()
-task1.mark_as_completed()
-print(task1)
+print("FIXME: Show the task being completed: ")
+for task in tasks:
+      task.mark_as_completed()
+      print(task)
+      print()
+
+
+
+
+
+
+
 
