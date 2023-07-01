@@ -1,0 +1,78 @@
+# ToDoListWithMenu.py
+
+# Add the functions from MenuWithValidation.py
+def get_valid_integer(prompt):
+    """Used to ensure an Integer was entered by user"""
+    while True:
+        try:
+            value = int(input(prompt))
+            return value
+        except ValueError:
+            print("Invalid input. Please enter an integer.")
+
+def get_valid_string(prompt):
+    """Used to ensure a string was entered by user"""
+    while True:
+        value = input(prompt).strip()
+        if value:
+            return value
+        else:
+            print("Invalid input. Please enter a non-empty string.")
+
+#for future use if float is needed
+"""
+def get_valid_float(prompt):
+    #Used to ensure a Float was entered by user
+    while True:
+        try:
+            value = float(input(prompt))
+            return value
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+"""
+
+
+#menu options
+def show_menu():
+    """Displays the menu options"""
+    print("Menu:")
+    print("1. Perform action 1")
+    print("2. Perform action 2")
+    print("3. Quit")
+
+def perform_action_1():
+    """Action 1"""
+    print("Performing action 1...")
+
+def perform_action_2():
+    """Action 2"""
+    print("Performing action 2...")
+
+
+
+
+
+
+# ToDoList.py code
+
+#a class used to create a to-do item
+class Task:
+    def __init__(self):
+        """initialize Task with a value"""
+        self.title = get_valid_string("Enter the title of the task: ")
+        self.priority = get_valid_string("Enter 'High' or 'Low' for the priority level: ")
+        self.due_date = get_valid_string("Enter the date due as MM-DD-YY: ")
+        self.completed = False
+
+    def mark_as_completed(self):
+        """converts __init__ to True"""
+        self.completed = True
+
+    def __str__(self):
+        """notes... """
+        status = "Completed" if self.completed else "Pending"
+        return f"Title: {self.title}\nPriority: {self.priority}\nDue Date: {self.due_date}\nStatus: {status}"
+
+# Main program
+#task = Task()
+#print(task)
