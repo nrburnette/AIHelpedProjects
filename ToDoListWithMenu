@@ -36,17 +36,11 @@ def get_valid_float(prompt):
 def show_menu():
     """Displays the menu options"""
     print("Menu:")
-    print("1. Perform action 1")
-    print("2. Perform action 2")
+    print("1. Add a new Task")
+    print("2. See a message")
     print("3. Quit")
 
-def perform_action_1():
-    """Action 1"""
-    print("Performing action 1...")
 
-def perform_action_2():
-    """Action 2"""
-    print("Performing action 2...")
 
 
 
